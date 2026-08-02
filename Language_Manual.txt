@@ -1,0 +1,45 @@
+
+==================================================
+           AURASCRIPT LANGUAGE MANUAL
+==================================================
+
+1. INTRODUCTION
+--------------------------------------------------
+AuraScript is a custom interpreted programming language built using Flex and Bison for compiler design studies. It supports standard variable assignments, arithmetic, logical comparisons, I/O operations, and unique custom control flows like `unless`.
+
+2. COMPILATION INSTRUCTIONS
+--------------------------------------------------
+To build the AuraScript interpreter from source on a Unix/Linux/WSL environment:
+    bison -d parser.y
+    flex lexer.l
+    gcc parser.tab.c lex.yy.c -o aura -lm
+
+3. EXECUTION INSTRUCTIONS
+--------------------------------------------------
+Run an AuraScript program via standard input redirection:
+    ./aura < examples/demo.aura
+
+4. SYNTAX & LANGUAGE GUIDE
+--------------------------------------------------
+* Variable Declaration & Assignment:
+    let radius = 7;
+    pi = 3.1416;
+
+* I/O Operations (Print):
+    print "Welcome to AuraScript!";
+    print area;
+
+* Conditional Statements:
+    if (score > 80) {
+        print "Excellent Performance!";
+    }
+
+    unless (score < 50) {
+        print "Status: Passing Grade Confirmed.";
+    }
+
+5. OPERATORS SUPPORTED
+--------------------------------------------------
+* Arithmetic: +, -, *, /
+* Logical / Relational: ==, !=, <, >, <=, >=
+==================================================
