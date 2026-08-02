@@ -1,0 +1,22 @@
+==================================================
+           AURASCRIPT LANGUAGE MANUAL
+==================================================
+
+1. COMPILATION INSTRUCTIONS
+--------------------------------------------------
+To build the AuraScript interpreter from source:
+    bison -d parser.y
+    flex lexer.l
+    gcc parser.tab.c lex.yy.c -o aura -lm
+
+2. EXECUTION INSTRUCTIONS
+--------------------------------------------------
+Run an AuraScript program:
+    ./aura < examples/demo.aura
+
+3. SYNTAX GUIDE
+--------------------------------------------------
+* Variable Declaration: let variable_name = value;
+* Print Statement: print "Hello"; or print variable_name;
+* Conditionals: if (x > 5) { ... } and unless (x == 0) { ... }
+==================================================

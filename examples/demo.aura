@@ -1,0 +1,18 @@
+// AuraScript Demonstration Program
+print "Welcome to AuraScript!";
+
+let radius = 7;
+let pi = 3.1416;
+let area = pi * radius * radius;
+
+print "Calculated Circle Area:";
+print area;
+
+let score = 85;
+if (score > 80) {
+    print "Excellent Performance!";
+}
+
+unless (score < 50) {
+    print "Status: Passing Grade Confirmed.";
+}
