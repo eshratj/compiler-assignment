@@ -68,6 +68,6 @@ unless (score < 50) {
 
 7. OPERATORS SUPPORTED
 --------------------------------------------------
-* Arithmetic: +, -, *, /[cite: 1, 2]
-* Logical / Relational: ==, !=, <, >, <=, >=[cite: 1, 2]
+* Arithmetic: +, -, *, /
+* Logical / Relational: ==, !=, <, >, <=, >=
 ==================================================
