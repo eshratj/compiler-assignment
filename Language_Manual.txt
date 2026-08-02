@@ -1,45 +1,73 @@
-
 ==================================================
            AURASCRIPT LANGUAGE MANUAL
 ==================================================
 
 1. INTRODUCTION
 --------------------------------------------------
-AuraScript is a custom interpreted programming language built using Flex and Bison for compiler design studies. It supports standard variable assignments, arithmetic, logical comparisons, I/O operations, and unique custom control flows like `unless`.
+AuraScript is a custom interpreted programming language built using Flex and Bison for compiler design studies[cite: 1, 2]. It supports standard variable assignments, arithmetic, logical comparisons, I/O operations, and unique custom control flows like `unless`[cite: 1, 2].
 
-2. COMPILATION INSTRUCTIONS
+2. PREREQUISITES & COMPILATION INSTRUCTIONS
 --------------------------------------------------
-To build the AuraScript interpreter from source on a Unix/Linux/WSL environment:
+To build the AuraScript interpreter from source on a Unix/Linux/WSL environment[cite: 1, 2]:
     bison -d parser.y
     flex lexer.l
     gcc parser.tab.c lex.yy.c -o aura -lm
 
 3. EXECUTION INSTRUCTIONS
 --------------------------------------------------
-Run an AuraScript program via standard input redirection:
+Run an AuraScript program via standard input redirection[cite: 1, 2]:
     ./aura < examples/demo.aura
 
-4. SYNTAX & LANGUAGE GUIDE
+4. KEYWORD & CONCEPT CHEAT SHEET
 --------------------------------------------------
-* Variable Declaration & Assignment:
-    let radius = 7;
-    pi = 3.1416;
+| Standard Concept | AuraScript Keyword / Syntax | Description |
+|------------------|-----------------------------|-------------|
+| Variable Decl    | `let`[cite: 1]             | Declares a new variable and assigns value |
+| Assignment       | `=`[cite: 1]               | Assigns a value to an existing variable |
+| Print / Output   | `print`[cite: 1]           | Outputs strings or evaluated expressions |
+| Conditional      | `if`[cite: 1]              | Executes block if condition is true |
+| Inverse Cond     | `unless`[cite: 1]          | Executes block if condition is false |
+| Loop             | `while`[cite: 1]           | Repeats block while condition holds |
 
-* I/O Operations (Print):
-    print "Welcome to AuraScript!";
-    print area;
-
-* Conditional Statements:
-    if (score > 80) {
-        print "Excellent Performance!";
-    }
-
-    unless (score < 50) {
-        print "Status: Passing Grade Confirmed.";
-    }
-
-5. OPERATORS SUPPORTED
+5. FORMAL EBNF SYNTAX RULES
 --------------------------------------------------
-* Arithmetic: +, -, *, /
-* Logical / Relational: ==, !=, <, >, <=, >=
+* Program ::= ( Statement )*
+* Statement ::= "let" IDENTIFIER "=" Expression ";"
+              | IDENTIFIER "=" Expression ";"
+              | "print" Expression ";"
+              | "print" STRING ";"
+              | "if" "(" Expression ")" "{" Program "}"
+              | "unless" "(" Expression ")" "{" Program "}"
+              | "while" "(" Expression ")" "{" Program "}"
+* Expression ::= NUMBER
+               | IDENTIFIER
+               | Expression ("+" | "-" | "*" | "/") Expression
+               | Expression ("==" | "!=" | "<" | ">" | "<=" | ">=") Expression
+               | "(" Expression ")"
+
+6. CODE SNIPPET EXAMPLES
+--------------------------------------------------
+// AuraScript Demonstration Program
+print "Welcome to AuraScript!";
+
+let radius = 7;
+let pi = 3.1416;
+let area = pi * radius * radius;
+
+print "Calculated Circle Area:";
+print area;
+
+let score = 85;
+if (score > 80) {
+    print "Excellent Performance!";
+}
+
+unless (score < 50) {
+    print "Status: Passing Grade Confirmed.";
+}
+
+7. OPERATORS SUPPORTED
+--------------------------------------------------
+* Arithmetic: +, -, *, /[cite: 1, 2]
+* Logical / Relational: ==, !=, <, >, <=, >=[cite: 1, 2]
 ==================================================
