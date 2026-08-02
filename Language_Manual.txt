@@ -16,7 +16,7 @@ To build the AuraScript interpreter from source on a Unix/Linux/WSL environment[
 3. EXECUTION INSTRUCTIONS
 --------------------------------------------------
 Run an AuraScript program via standard input redirection[cite: 1, 2]:
-    ./aura < examples/demo.aura
+    ./aura < examples/demo.hellokitty
 
 4. KEYWORD & CONCEPT CHEAT SHEET
 --------------------------------------------------

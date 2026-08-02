@@ -1,4 +1,4 @@
-# AuraScript (.aura) Programming Language
+# AuraScript (.hellokitty) Programming Language
 
 AuraScript is a custom-built interpreted programming language designed with an intuitive domain vocabulary, a Flex lexical scanner, a Bison LALR parser, an Abstract Syntax Tree (AST) generator, and a C execution interpreter. Created as a Compiler Design Lab assignment.
 
@@ -7,10 +7,11 @@ AuraScript is a custom-built interpreted programming language designed with an i
 ## 🏛️ Architecture Overview
 
 The AuraScript compiler pipeline consists of three core stages:
-```
-                +-------------------+
-                |   Source (.aura)  |
-                +---------+---------+
+
+```text
+                +-----------------------+
+                |   Source (.hellokitty) |
+                +---------+-------------+
                           |
                           v
                 +-------------------+
@@ -30,18 +31,19 @@ The AuraScript compiler pipeline consists of three core stages:
                 |  (Symbol Engine)  |
                 +-------------------+
 ```
+
 ### 1. Lexical Analysis (`lexer.l`)
 - Built using **Flex**.
-- Converts `.aura` raw source code into structured tokens: keywords (`let`, `print`, `input`, `if`, `else`, `unless`, `while`), identifiers, integer constants, double-quoted string literals, and operators (`^`, `+`, `-`, `*`, `/`, `==`, `!=`, `<=`, `>=`).
-- Handles escape sequences, skips whitespace, and strips single-line `//` comments[cite: 1].
+- Converts `.hellokitty` raw source code into structured tokens: keywords (`let`, `print`, `input`, `if`, `else`, `unless`, `while`), identifiers, integer constants, double-quoted string literals, and operators (`^`, `+`, `-`, `*`, `/`, `==`, `!=`, `<=`, `>=`).
+- Handles escape sequences, skips whitespace, and strips single-line `//` comments.
 
 ### 2. Syntax Analysis & AST Generation (`parser.y`)
 - Built using **GNU Bison**.
 - Parses the token stream according to formal context-free grammar rules.
-- Builds an Abstract Syntax Tree (AST) composed of typed nodes for declarations, assignments, I/O, control flow, and expressions[cite: 1, 2].
+- Builds an Abstract Syntax Tree (AST) composed of typed nodes for declarations, assignments, I/O, control flow, and expressions.
 
 ### 3. Runtime Interpreter Engine (`parser.y`)
-- Recursively evaluates the AST statement lists[cite: 1, 2].
+- Recursively evaluates the AST statement lists.
 - Manages a runtime symbol table (`symtab`) for variable declarations and assignments.
 - Performs numerical evaluation, string literal handling, and expression execution.
 - Handles runtime variable lookups and execution flow smoothly.
@@ -71,21 +73,21 @@ The AuraScript compiler pipeline consists of three core stages:
 - **Solution**: Explicitly defined token precedence levels (`%left`, `%right`, `%nonassoc`) and structured grammar rules in `parser.y` to resolve conflicts cleanly.
 
 ### 2. Handling Nested Statement Blocks
-- **Challenge**: Supporting arbitrarily nested `{ ... }` block statements inside control structures like `if`, `unless`, and `while` without execution corruption[cite: 1].
-- **Solution**: Structured grammar rules and C-based action blocks to seamlessly handle block scopes and statement execution hierarchies[cite: 1].
+- **Challenge**: Supporting arbitrarily nested `{ ... }` block statements inside control structures like `if`, `unless`, and `while` without execution corruption.
+- **Solution**: Structured grammar rules and C-based action blocks to seamlessly handle block scopes and statement execution hierarchies.
 
 ### 3. Symbol Table Scope & Storage
-- **Challenge**: Managing variable state persistence and dynamic lookups during runtime execution[cite: 1].
-- **Solution**: Implemented linear lookup and update functions (`set_val` and `get_val`) in C to maintain variable state across program statements[cite: 1].
+- **Challenge**: Managing variable state persistence and dynamic lookups during runtime execution.
+- **Solution**: Implemented linear lookup and update functions (`set_val` and `get_val`) in C to maintain variable state across program statements.
 
 ---
 
 ## 🚀 Building & Running
 
 ### Prerequisites
-- GCC (`gcc`)[cite: 1, 2]
-- Flex (`flex`)[cite: 1, 2]
-- Bison (`bison`)[cite: 1, 2]
+- GCC (`gcc`)
+- Flex (`flex`)
+- Bison (`bison`)
 
 ### Compile
 Run from the repository root:
@@ -95,4 +97,4 @@ bison -d parser.y
 flex lexer.l
 gcc parser.tab.c lex.yy.c -o aura -lm
 
-./aura < examples/demo.aura
+./aura < examples/demo.hellokitty
