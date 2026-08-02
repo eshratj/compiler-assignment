@@ -7,6 +7,7 @@ AuraScript is a custom-built interpreted programming language designed with an i
 ## 🏛️ Architecture Overview
 
 The AuraScript compiler pipeline consists of three core stages:
+```
                 +-------------------+
                 |   Source (.aura)  |
                 +---------+---------+
@@ -28,7 +29,7 @@ The AuraScript compiler pipeline consists of three core stages:
                 | C AST Interpreter |  (execute_program)
                 |  (Symbol Engine)  |
                 +-------------------+
-
+```
 ### 1. Lexical Analysis (`lexer.l`)
 - Built using **Flex**[cite: 1].
 - Converts `.aura` raw source code into structured tokens: keywords (`let`, `print`, `input`, `if`, `else`, `unless`, `while`), identifiers, integer constants, double-quoted string literals, and operators (`^`, `+`, `-`, `*`, `/`, `==`, `!=`, `<=`, `>=`)[cite: 1, 2].
