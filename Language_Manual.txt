@@ -4,7 +4,7 @@
 
 1. INTRODUCTION
 --------------------------------------------------
-AuraScript is a custom interpreted programming language built using Flex and Bison for compiler design studies[cite: 1, 2]. It supports standard variable assignments, arithmetic, logical comparisons, I/O operations, and unique custom control flows like `unless`[cite: 1, 2].
+AuraScript is a custom interpreted programming language built using Flex and Bison for compiler design studies. It supports standard variable assignments, arithmetic, logical comparisons, I/O operations, and unique custom control flows like `unless`.
 
 2. PREREQUISITES & COMPILATION INSTRUCTIONS
 --------------------------------------------------
