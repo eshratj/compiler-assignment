@@ -22,12 +22,12 @@ Run an AuraScript program via standard input redirection[cite: 1, 2]:
 --------------------------------------------------
 | Standard Concept | AuraScript Keyword / Syntax | Description |
 |------------------|-----------------------------|-------------|
-| Variable Decl    | `let`[cite: 1]             | Declares a new variable and assigns value |
-| Assignment       | `=`[cite: 1]               | Assigns a value to an existing variable |
-| Print / Output   | `print`[cite: 1]           | Outputs strings or evaluated expressions |
-| Conditional      | `if`[cite: 1]              | Executes block if condition is true |
-| Inverse Cond     | `unless`[cite: 1]          | Executes block if condition is false |
-| Loop             | `while`[cite: 1]           | Repeats block while condition holds |
+| Variable Decl    | `let`                       | Declares a new variable and assigns value |
+| Assignment       | `=`                         | Assigns a value to an existing variable |
+| Print / Output   | `print`                     | Outputs strings or evaluated expressions |
+| Conditional      | `if`                        | Executes block if condition is true |
+| Inverse Cond     | `unless`                    | Executes block if condition is false |
+| Loop             | `while`                     | Repeats block while condition holds |
 
 5. FORMAL EBNF SYNTAX RULES
 --------------------------------------------------
