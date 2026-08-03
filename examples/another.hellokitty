@@ -1,0 +1,13 @@
+let x = 5;
+let y = 3;
+print "x + y = ";
+print x + y;
+
+if (x > y) {
+    print "x is greater than y";
+}
+
+while (x < 10) {
+    x = x + 1;
+}
+print x;
